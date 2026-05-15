@@ -4,115 +4,124 @@
 
 **Horário:** 19h às 21h  
 **Base:** volumes 01 e 02 do Informática 5.0: EmpreTech.  
-**Perfil da turma:** alunos iniciantes e alunos com alguma experiência digital.  
-**Foco pedagógico:** acolher, nivelar, despertar repertório e mostrar como tecnologia, pesquisa e IA podem abrir caminhos de estudo, trabalho e negócios.
+**Perfil da turma:** alunos iniciantes e alunos com algum repertório digital.  
+**Foco pedagógico:** apresentar o curso como uma jornada de autonomia digital, mostrando como tecnologia, pesquisa no Google e inteligência artificial podem abrir caminhos de estudo, trabalho e negócios.
 
 ## Intenção da aula
 
-Esta não é uma aula de e-commerce, consultoria, senior, design ou dados. É a **porta de entrada do curso Informática 5.0**.
+Esta aula é a porta de entrada do curso. Ela não deve parecer uma lista de conteúdos nem uma aula reaproveitada de outro módulo. O objetivo é criar visão, desejo de aprendizagem e clareza de percurso.
 
-O papel do professor é mostrar que tecnologia não é apenas “mexer em computador”, nem apenas “usar aplicativo”. Tecnologia é linguagem, ferramenta, oportunidade profissional e possibilidade de criação.
+A turma precisa entender três ideias:
+
+- tecnologia não é só “mexer no computador”, é usar ferramentas para resolver necessidades;
+- pesquisar bem é uma habilidade central para aprender e encontrar oportunidades;
+- inteligência artificial não substitui o aluno, mas pode ajudar a organizar ideias, estudar melhor e enxergar caminhos.
 
 Frase de direção:
 
 ```text
-Hoje vamos entender como informação bem pesquisada pode virar aprendizagem, decisão profissional e oportunidade.
+Hoje vamos ver como uma informação bem pesquisada pode virar aprendizagem, melhoria profissional ou ideia de negócio digital.
 ```
 
-## Resultado esperado da aula
+## Resultado esperado
 
-Cada aluno deve sair com:
+Ao final da aula, cada aluno deve sair com:
 
-- compreensão inicial do que é o curso Informática 5.0;
-- noção dos pilares: tecnologia, inteligência artificial e empreendedorismo;
-- clareza de que o curso começa no básico, mas mira aplicações reais;
-- uma primeira experiência de pesquisa no Google com intenção, comparação e filtro;
-- uma primeira experiência de uso do ChatGPT como apoio para organizar ideias;
-- um pequeno mapa pessoal: “tema que quero aprender, oportunidade possível e primeiro passo”.
+- visão inicial do que é o curso Informática 5.0;
+- compreensão dos pilares: tecnologia, inteligência artificial e empreendedorismo;
+- noção de como o curso evolui do uso básico para aplicações reais;
+- primeira prática de pesquisa no Google com intenção;
+- primeira estrutura de pergunta para usar IA como apoio de estudo;
+- um pequeno mapa pessoal ligando tema de interesse, habilidade digital e oportunidade possível.
 
 ## Critérios de sucesso
 
-Ao final da aula, o aluno deve conseguir:
+O aluno deve conseguir:
 
-- citar pelo menos três áreas ou ferramentas que estudará no curso;
-- explicar com palavras simples por que tecnologia gera oportunidades;
-- diferenciar uma busca comum de uma pesquisa com intenção;
-- montar uma pergunta melhor para o ChatGPT;
-- explicar como uma informação pesquisada pode virar ideia de serviço, produto digital ou melhoria profissional.
+- citar áreas que estudará no curso;
+- explicar por que uma habilidade digital pode gerar oportunidade;
+- diferenciar busca comum de pesquisa com intenção;
+- avaliar se um resultado de pesquisa serve para seu nível e objetivo;
+- montar uma pergunta para IA com contexto;
+- dizer como um tema pesquisado pode virar estudo, serviço, produto digital ou melhoria de trabalho.
 
 ## Materiais
 
 - Slides: `index.html`
 - Computador do professor com projetor
 - Google Chrome
-- Acesso ao ChatGPT, se possível
+- Acesso ao ChatGPT ou outra IA, se possível
 - Caderno, Google Docs ou bloco de notas
 
-## Postura pedagógica para turma mista
+## Postura pedagógica
 
-Para iniciantes:
+Para alunos iniciantes:
 
-- explique termos sem pressa;
-- valide dúvidas básicas;
-- use exemplos do cotidiano;
-- peça pequenas entregas, não tarefas longas.
+- explique termos técnicos com exemplos do cotidiano;
+- não trate dúvidas básicas como atraso;
+- dê passos curtos e visíveis;
+- valorize pequenas descobertas.
 
-Para intermediários:
+Para alunos intermediários:
 
-- ofereça desafios extras;
-- peça que comparem fontes;
-- peça que melhorem prompts;
-- convide-os a ajudar colegas sem tomar o mouse ou fazer a tarefa por eles.
+- peça buscas mais refinadas;
+- peça comparação entre fontes;
+- proponha que melhorem prompts;
+- convide-os a apoiar colegas sem fazer a tarefa por eles.
 
 ---
 
 # Plano de aula por horário
 
-## 19h00 - 19h08 | Abertura: por que estamos aqui?
+## 19h00 - 19h08 | Abertura da jornada
 
 **Slide:** 1  
-**Objetivo:** acolher e posicionar a aula como início de jornada.
+**Objetivo:** apresentar a proposta da aula e criar expectativa positiva.
 
 Fala sugerida:
 
-> Boa noite. Hoje começa uma jornada. Alguns aqui já têm facilidade com tecnologia, outros ainda estão ganhando confiança. Isso é normal. O curso foi pensado para construir uma ponte entre esses níveis.
+> Boa noite. Hoje começamos uma jornada chamada Informática 5.0. Alguns de vocês já usam tecnologia com facilidade. Outros ainda estão ganhando confiança. Isso é esperado. O curso existe justamente para construir essa ponte.
 
-> Informática 5.0 não é só aprender botão. É aprender tecnologia para estudar melhor, trabalhar melhor, criar melhor e enxergar oportunidades.
+> A ideia não é aprender botão por botão de forma solta. A ideia é aprender tecnologia para estudar melhor, trabalhar melhor, criar melhor e reconhecer oportunidades.
 
 Condução:
 
 - Apresente o tema da aula.
-- Explique que a noite terá conversa, pequenas práticas e reflexão individual.
-- Diga que ninguém precisa sair especialista hoje. A meta é entender o caminho e dar o primeiro passo.
+- Explique que a aula terá conversa, demonstração e prática curta.
+- Deixe claro que o objetivo da noite é enxergar o potencial do curso e dar o primeiro passo.
 
-## 19h08 - 19h23 | Oportunidades que a tecnologia abre
+## 19h08 - 19h22 | Tecnologia abre caminhos
 
 **Slides:** 2 e 3  
-**Objetivo:** mostrar que a tecnologia abre caminhos para estudo, trabalho e negócios quando encontra uma necessidade real.
+**Objetivo:** mostrar oportunidades que a tecnologia abre para estudo, trabalho e negócios.
 
 Fala sugerida:
 
-> A tecnologia não gera oportunidade só porque existe. Ela gera oportunidade quando alguém aprende a usar uma ferramenta para resolver uma necessidade.
+> A mesma ferramenta pode ter usos diferentes. Um aluno pode usar para estudar. Um profissional pode usar para entregar melhor. Um empreendedor pode usar para vender, atender ou criar um produto.
 
-Use exemplos simples:
+Use exemplos:
 
-- um aluno que pesquisa melhor ganha autonomia;
-- um profissional que domina planilhas organiza melhor o trabalho;
-- um pequeno negócio que usa design, atendimento digital e dados vende e atende melhor;
-- uma habilidade pode virar serviço, template, conteúdo ou produto digital.
+- Google pode ser pesquisa escolar, pesquisa profissional ou pesquisa de mercado.
+- Planilhas podem servir para estudar fórmulas, organizar trabalho ou criar um serviço de controle financeiro.
+- Canva pode servir para apresentação, comunicação profissional ou criação de peças para clientes.
+- IA pode ajudar a estudar, escrever melhor, planejar, comparar ideias e criar rascunhos.
 
-Perguntas para a turma:
+Perguntas para interação:
 
-- Que ferramenta digital você já usa no dia a dia?
-- Essa ferramenta resolve qual problema?
-- Alguém poderia estudar, trabalhar ou ganhar renda usando melhor essa habilidade?
+- Que ferramenta digital você usou hoje?
+- Ela resolveu qual problema?
+- Essa mesma ferramenta poderia ser usada no estudo, no trabalho ou em um negócio?
 
-## 19h23 - 19h33 | Meu ponto de partida
+Fechamento:
+
+> Oportunidade não nasce só da ferramenta. Ela nasce quando uma habilidade encontra uma necessidade.
+
+## 19h22 - 19h32 | Meu ponto de partida
 
 **Slide:** 4  
-**Objetivo:** diagnosticar o nível da turma sem constranger.
+**Objetivo:** nivelar a turma sem constranger.
 
-Atividade individual rápida:
+Atividade rápida:
 
 ```text
 Marque no caderno:
@@ -123,82 +132,99 @@ Marque no caderno:
 5. Já pensei em usar tecnologia para ganhar renda ou melhorar um trabalho.
 ```
 
-Depois, peça respostas por levantamento de mão, sem expor alunos individualmente.
+Condução:
 
-Fechamento:
+- Peça que os alunos marquem individualmente.
+- Depois faça levantamento de mão por item, sem perguntar nomes.
+- Observe o nível geral da turma para ajustar o ritmo das práticas.
 
-> Esse ponto de partida não limita ninguém. Ele só mostra onde a evolução começa.
+Fala de cuidado:
 
-## 19h33 - 19h48 | O que é Informática 5.0 e como informação vira oportunidade
+> Isso não é prova. É um mapa de partida. O ponto de partida mostra o caminho, não o limite.
 
-**Slides:** 5, 6 e 7  
-**Objetivo:** apresentar o curso como percurso e mostrar a lógica “pesquisar, filtrar, aplicar e testar”.
+## 19h32 - 19h44 | Os pilares do Informática 5.0
+
+**Slide:** 5  
+**Objetivo:** apresentar a lógica do curso sem virar leitura de ementa.
 
 Explique os três pilares:
 
-- **Tecnologia:** ferramentas digitais, internet, documentos, planilhas, nuvem, segurança, design, dados, sites e automações.
-- **Inteligência Artificial:** apoio para pesquisar, escrever, planejar, criar, analisar e aprender.
-- **Empreendedorismo:** transformar habilidade digital em serviço, produto, melhoria de trabalho ou negócio.
+- **Tecnologia:** ferramentas digitais para produzir, organizar, comunicar, analisar e resolver problemas.
+- **Inteligência artificial:** apoio para pesquisar, escrever, planejar, revisar, comparar e aprender melhor.
+- **Empreendedorismo:** aplicação das habilidades digitais em trabalho, serviços, produtos e oportunidades.
 
 Fala sugerida:
 
-> O curso começa com fundamentos, mas não fica preso no básico. A ideia é avançar do uso para a produção, da produção para a análise e da análise para oportunidades.
+> O curso começa nos fundamentos, mas não fica preso ao básico. A cada etapa, a pergunta será: como essa ferramenta pode me ajudar a estudar, trabalhar ou criar valor?
 
-Use o slide “Da informação à oportunidade” para explicar:
+## 19h44 - 19h55 | Da informação à oportunidade
 
-- pergunta: o que quero aprender, resolver ou entender;
-- pesquisa: que fontes, exemplos e dados encontrei;
-- filtro: o que é confiável e adequado ao meu nível;
-- organização: como resumo e comparo;
-- aplicação: isso vira estudo, trabalho ou negócio;
-- teste: qual primeiro passo pequeno posso executar.
+**Slide:** 6  
+**Objetivo:** ensinar a lógica central da aula: informação bem pesquisada pode virar direção.
 
-## 19h48 - 20h05 | Mapa da jornada e pesquisa no Google
+Explique o caminho do slide:
 
-**Slide:** 8  
-**Objetivo:** dar visão de conjunto dos volumes sem sobrecarregar.
-
-Apresente a jornada em seis verbos:
-
-- Navegar e comunicar.
-- Organizar e proteger.
-- Produzir e apresentar.
-- Criar conteúdo e presença digital.
-- Analisar dados e automatizar.
-- Vender, empreender e criar soluções.
-
-Conexão com os livros:
-
-- Volume 01: Google Workspace, comunicação, nuvem, segurança, design, conteúdo e monetização.
-- Volume 02: planilhas, dashboards, gestão, e-commerce, automações, chatbots, low-code/no-code e sites.
-
-Não leia como sumário. Apresente como caminho de crescimento.
-
-**Slide:** 9  
-**Objetivo:** ensinar que pesquisar é formular uma pergunta, escolher palavras-chave, comparar fontes e extrair informação útil.
+- **Pergunta:** o que quero aprender, resolver ou entender?
+- **Pesquisa:** quais fontes, exemplos e dados encontro?
+- **Filtro:** o que é confiável e adequado ao meu nível?
+- **Organização:** como resumo, comparo e transformo em plano?
+- **Aplicação:** isso vira estudo, melhoria no trabalho ou ideia de negócio?
+- **Teste:** qual primeiro passo pequeno posso executar?
 
 Fala sugerida:
 
-> Muita gente digita no Google. Pesquisar é mais do que digitar: é transformar uma dúvida em investigação.
+> Muitos alunos acham que pesquisar é só jogar palavras no Google. Mas pesquisa boa começa com uma pergunta clara e termina com uma ação possível.
 
-Explique:
+## 19h55 - 20h05 | Mapa da jornada do curso
 
-- pergunta: o que eu quero descobrir?
-- palavra-chave: quais termos representam essa dúvida?
-- filtro: que tipo de resultado me ajuda?
-- fonte: posso confiar?
-- aplicação: como uso essa informação?
+**Slide:** 7  
+**Objetivo:** dar visão de conjunto dos volumes 01 e 02.
 
-## 20h05 - 20h25 | Prática 1: pesquisa com intenção e oportunidade
+Apresente a jornada como crescimento de autonomia:
+
+- navegar e comunicar;
+- organizar e proteger;
+- produzir e criar;
+- analisar dados;
+- gerir e vender;
+- automatizar e empreender.
+
+Fala sugerida:
+
+> Não vejam isso como uma lista de matérias. Vejam como uma escada. Cada módulo aumenta o que vocês conseguem fazer com tecnologia.
+
+## 20h05 - 20h17 | Pesquisar no Google com intenção
+
+**Slides:** 8 e 9  
+**Objetivo:** ensinar pesquisa no Google como habilidade de investigação.
+
+Fala sugerida:
+
+> Pesquisar não é só digitar. Pesquisar é transformar uma dúvida em investigação.
+
+Explique os três passos:
+
+- definir a pergunta;
+- escolher palavras-chave;
+- comparar resultados.
+
+Demonstre comandos simples:
+
+- aspas: `"google sheets básico"`
+- sinal de menos: `design canva -avançado`
+- filetype: `planilhas filetype:pdf`
+- site: `empreendedorismo site:gov.br`
+
+Condução:
+
+- Mostre uma busca comum.
+- Depois mostre uma busca refinada.
+- Pergunte à turma qual resultado parece mais útil e por quê.
+
+## 20h17 - 20h35 | Prática 1: pesquisa com intenção e oportunidade
 
 **Slide:** 10  
-**Objetivo:** fazer todos praticarem pesquisa conectando aprendizagem, trabalho e oportunidade.
-
-Antes da prática, demonstre no projetor:
-
-- busca de estudo: `"google sheets básico" filetype:pdf`
-- busca de trabalho: `serviços com google sheets pequenos negócios`
-- busca de produto: `como vender templates no canva`
+**Objetivo:** praticar pesquisa conectando aprendizagem, trabalho e oportunidade.
 
 Atividade:
 
@@ -217,52 +243,56 @@ Que problema real apareceu?
 Que oportunidade esse tema pode abrir?
 ```
 
-Para iniciantes:
+Para alunos iniciantes:
 
 ```text
-Use uma busca simples e uma busca com aspas.
+Faça uma busca simples e uma busca usando aspas.
 ```
 
-Para intermediários:
+Para alunos intermediários:
 
 ```text
-Use filetype:pdf, site: ou compare duas fontes.
+Use filetype:pdf, site: ou compare duas fontes diferentes.
 ```
 
-## 20h25 - 20h35 | Socialização e leitura crítica
+Circule pela sala e ajude os alunos a transformar termos vagos em buscas melhores.
+
+## 20h35 - 20h43 | Leitura crítica da informação
 
 **Slide:** 11  
-**Objetivo:** ensinar que pesquisar também exige julgamento.
+**Objetivo:** mostrar que encontrar informação não basta; é preciso avaliar.
 
-Perguntas:
+Perguntas para discussão:
 
 - O conteúdo serve para meu nível?
 - A fonte parece confiável?
+- Tem data, autor, instituição ou organização clara?
 - Mostra alguma aplicação real?
 - A informação ajuda a estudar, trabalhar ou pensar em oportunidade?
 
 Fala sugerida:
 
-> Informação demais também atrapalha. O aluno de tecnologia precisa aprender a filtrar.
+> Informação demais também atrapalha. O aluno de tecnologia precisa aprender a filtrar, não apenas acumular links.
 
-## 20h35 - 20h47 | Google + IA: transformar informação em possibilidade
+## 20h43 - 20h52 | Google + IA
 
 **Slide:** 12  
-**Objetivo:** mostrar que Google ajuda a encontrar sinais e fontes, enquanto IA ajuda a organizar, explicar, comparar e imaginar aplicações.
+**Objetivo:** diferenciar o papel do Google e da IA no processo de aprendizagem.
+
+Explique:
+
+- Google ajuda a encontrar fontes, exemplos, materiais, tendências e dúvidas comuns.
+- IA ajuda a organizar, explicar, comparar, sugerir caminhos e montar planos.
+- Nenhum dos dois substitui pensamento crítico.
 
 Fala sugerida:
 
-> O Google ajuda a encontrar informações espalhadas. A IA ajuda a organizar ideias e levantar caminhos. Mas quem decide é o aluno.
+> O Google encontra sinais. A IA organiza possibilidades. Mas quem decide o que faz sentido é o aluno.
 
-Explique a diferença:
-
-- Google: fontes, exemplos, materiais, tendências e dúvidas comuns.
-- IA: explicação simples, comparação, ideias, plano e próximos passos.
-
-## 20h47 - 20h58 | Prompt com direção
+## 20h52 - 20h58 | Prompt com direção
 
 **Slides:** 13 e 14  
-**Objetivo:** fazer o aluno transformar pesquisa em plano pessoal de estudo e oportunidade.
+**Objetivo:** ensinar um modelo de pergunta para transformar pesquisa em plano.
 
 Mostre a fórmula:
 
@@ -270,7 +300,7 @@ Mostre a fórmula:
 Quem sou + o que encontrei + objetivo + público + formato da resposta.
 ```
 
-Modelo:
+Modelo para demonstrar:
 
 ```text
 Sou aluno iniciante/intermediário do curso Informática 5.0.
@@ -283,7 +313,7 @@ Responda em tabela com:
 4. primeiro passo para aprender.
 ```
 
-Fechamento da atividade:
+Atividade final curta:
 
 ```text
 Quero aprender mais sobre...
@@ -297,30 +327,25 @@ Meu primeiro passo de estudo será...
 **Slide:** 15  
 **Objetivo:** fechar com continuidade.
 
-Fechamento:
+Fala sugerida:
 
-> O curso vai passar por muitas ferramentas, mas a habilidade principal é aprender a aprender tecnologia e aplicar o que foi aprendido. Hoje vocês começaram a transformar informação em direção.
-
-Gancho:
-
-> Na próxima aula, vamos começar a transformar essa visão em produção: comunicação, organização e ferramentas digitais que aparecem no estudo, no trabalho e nos negócios.
+> Hoje vocês viram que tecnologia abre oportunidades quando existe método: pesquisar melhor, filtrar informação e usar IA com contexto. Na próxima aula, vamos sair da visão geral e começar a produzir com ferramentas digitais de comunicação, organização e colaboração.
 
 ## Plano B: turma muito básica
 
-Reduza a prática de pesquisa para:
+Reduza a prática para:
 
 - abrir o Chrome;
-- pesquisar um termo;
-- pesquisar o mesmo termo com aspas;
-- conversar sobre qual resultado ficou mais claro.
+- pesquisar um tema;
+- repetir a busca usando aspas;
+- comparar qual resultado ficou mais claro;
+- fazer a parte de IA no projetor, com sugestões da turma.
 
-Na parte de ChatGPT, faça a demonstração no projetor.
-
-## Plano B: turma mais intermediária
+## Plano B: turma intermediária
 
 Acrescente:
 
 - comparação entre duas fontes;
-- busca por data;
-- pedido ao ChatGPT para montar um plano de estudo;
-- crítica da resposta da IA: o que está bom, genérico ou precisa ser conferido.
+- busca com `site:` e `filetype:`;
+- pedido ao ChatGPT para criar uma trilha de estudo de 7 dias;
+- crítica da resposta da IA: o que está bom, o que está genérico e o que precisa ser conferido.
