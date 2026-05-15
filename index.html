@@ -1,0 +1,844 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Aula 1 | Informática 5.0</title>
+  <style>
+    :root {
+      --bg: #f5f1e8;
+      --paper: #fffdf7;
+      --ink: #132033;
+      --muted: #5d6878;
+      --line: #d8cfbf;
+      --green: #126b5b;
+      --blue: #2457a4;
+      --gold: #b87518;
+      --red: #a0473d;
+      --soft-green: #e3f0eb;
+      --soft-blue: #e8eef8;
+      --soft-gold: #fbefd8;
+      --soft-red: #f5e6e1;
+      --shadow: 0 18px 44px rgba(19, 32, 51, .12);
+    }
+
+    * { box-sizing: border-box; }
+    html, body { margin: 0; height: 100%; }
+
+    body {
+      overflow: hidden;
+      color: var(--ink);
+      background:
+        linear-gradient(90deg, rgba(19, 32, 51, .05) 1px, transparent 1px),
+        linear-gradient(0deg, rgba(19, 32, 51, .05) 1px, transparent 1px),
+        var(--bg);
+      background-size: 34px 34px;
+      font-family: Inter, "Segoe UI", Arial, sans-serif;
+    }
+
+    .deck { width: 100vw; height: 100vh; position: relative; }
+
+    .slide {
+      display: none;
+      width: 100vw;
+      height: 100vh;
+      padding: 2.35rem 3.15rem 2.65rem;
+      grid-template-rows: auto minmax(0, 1fr) auto;
+      gap: 1rem;
+      overflow: hidden;
+    }
+
+    .slide.active { display: grid; }
+
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      gap: 1.25rem;
+    }
+
+    .eyebrow {
+      color: var(--green);
+      font-size: .78rem;
+      font-weight: 850;
+      text-transform: uppercase;
+      letter-spacing: .08em;
+      margin-bottom: .5rem;
+    }
+
+    h1, h2, h3, p { margin: 0; }
+
+    h1 {
+      max-width: 1080px;
+      font-size: clamp(2.55rem, 5vw, 5.15rem);
+      line-height: .96;
+      letter-spacing: 0;
+    }
+
+    h2 {
+      max-width: 1010px;
+      font-size: clamp(2rem, 3.35vw, 3.5rem);
+      line-height: 1.04;
+      letter-spacing: 0;
+    }
+
+    h3 { font-size: 1.08rem; line-height: 1.15; }
+
+    .subtitle {
+      max-width: 890px;
+      color: #3b4657;
+      font-size: clamp(1rem, 1.28vw, 1.35rem);
+      line-height: 1.35;
+      margin-top: .85rem;
+    }
+
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      gap: .5rem;
+      border: 1px solid var(--line);
+      background: rgba(255, 253, 247, .93);
+      border-radius: 999px;
+      padding: .52rem .8rem;
+      color: #334155;
+      font-weight: 850;
+      white-space: nowrap;
+      box-shadow: 0 8px 18px rgba(19, 32, 51, .06);
+    }
+
+    .badge::before {
+      content: "";
+      width: .58rem;
+      height: .58rem;
+      border-radius: 999px;
+      background: var(--gold);
+    }
+
+    .content {
+      min-height: 0;
+      align-self: center;
+      overflow: hidden;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: .9rem;
+    }
+
+    .grid.two { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    .grid.four { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+    .grid.wide-left { grid-template-columns: 1.08fr .92fr; }
+
+    .card {
+      min-height: 128px;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: rgba(255, 253, 247, .93);
+      box-shadow: 0 12px 30px rgba(19, 32, 51, .08);
+      padding: 1rem;
+      overflow: hidden;
+    }
+
+    .green { background: var(--soft-green); border-color: #bdd8cf; }
+    .blue { background: var(--soft-blue); border-color: #c4d3ec; }
+    .gold { background: var(--soft-gold); border-color: #ead3a6; }
+    .red { background: var(--soft-red); border-color: #e2c3bd; }
+
+    .card strong {
+      display: block;
+      font-size: 1.03rem;
+      margin-bottom: .5rem;
+      color: #152238;
+    }
+
+    .card p, li {
+      color: #465464;
+      font-size: .94rem;
+      line-height: 1.32;
+    }
+
+    ul, ol { margin: .55rem 0 0; padding-left: 1.12rem; }
+    li + li { margin-top: .35rem; }
+
+    .hero {
+      display: grid;
+      grid-template-columns: 1fr .9fr;
+      gap: 1rem;
+      align-items: stretch;
+    }
+
+    .path {
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: var(--paper);
+      box-shadow: var(--shadow);
+      padding: 1rem;
+      min-height: 330px;
+      display: grid;
+      grid-template-rows: auto 1fr;
+      gap: 1rem;
+    }
+
+    .path-title {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+    }
+
+    .path-title span {
+      color: var(--muted);
+      font-weight: 750;
+      font-size: .9rem;
+    }
+
+    .ladder {
+      display: grid;
+      grid-template-columns: repeat(6, minmax(0, 1fr));
+      gap: .55rem;
+      align-items: end;
+    }
+
+    .rung {
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      padding: .72rem;
+      background: #fff;
+      min-height: 92px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    .rung:nth-child(1) { min-height: 92px; }
+    .rung:nth-child(2) { min-height: 112px; }
+    .rung:nth-child(3) { min-height: 132px; }
+    .rung:nth-child(4) { min-height: 152px; }
+    .rung:nth-child(5) { min-height: 172px; }
+    .rung:nth-child(6) { min-height: 192px; }
+
+    .rung b {
+      color: var(--green);
+      font-size: .88rem;
+    }
+
+    .rung span {
+      color: #354255;
+      font-size: .84rem;
+      line-height: 1.18;
+      font-weight: 800;
+    }
+
+    .quote {
+      font-size: clamp(1.45rem, 2.65vw, 2.8rem);
+      line-height: 1.12;
+      font-weight: 880;
+      max-width: 980px;
+    }
+
+    .activity {
+      border: 1px solid #cdbf9f;
+      background: #fffaf0;
+      border-radius: 8px;
+      padding: 1rem;
+      box-shadow: 0 12px 32px rgba(184, 117, 24, .12);
+    }
+
+    code, .query {
+      font-family: Consolas, "Courier New", monospace;
+      color: #20304a;
+    }
+
+    .activity code {
+      display: block;
+      white-space: pre-wrap;
+      font-size: 1rem;
+      line-height: 1.36;
+    }
+
+    .query {
+      display: inline-block;
+      border: 1px solid #d7cdbc;
+      background: #fff;
+      border-radius: 999px;
+      padding: .45rem .68rem;
+      font-size: .9rem;
+      margin: .22rem .2rem 0 0;
+      max-width: 100%;
+    }
+
+    .route {
+      display: grid;
+      grid-template-columns: repeat(6, minmax(0, 1fr));
+      gap: .72rem;
+    }
+
+    .route .card {
+      min-height: 190px;
+      box-shadow: none;
+    }
+
+    .number {
+      color: var(--green);
+      font-size: 2rem;
+      font-weight: 950;
+      line-height: .95;
+      margin-bottom: .65rem;
+    }
+
+    .timer {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-width: 100px;
+      border: 1px solid #cbbd9c;
+      border-radius: 8px;
+      background: #fffaf0;
+      color: #17202a;
+      font-weight: 950;
+      padding: .56rem .72rem;
+    }
+
+    .button-row {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: .55rem;
+      margin-top: .82rem;
+    }
+
+    button {
+      border: 1px solid #bcb2a3;
+      background: var(--paper);
+      color: #213044;
+      border-radius: 8px;
+      padding: .58rem .8rem;
+      font-weight: 850;
+      cursor: pointer;
+      font: inherit;
+      min-height: 38px;
+    }
+
+    button:hover { background: #f0eadf; }
+    .primary-btn { background: var(--green); color: #fff; border-color: var(--green); }
+    .primary-btn:hover { background: #10584d; }
+
+    .mini-footer {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+      color: #697386;
+      font-size: .82rem;
+    }
+
+    .progress-wrap {
+      display: flex;
+      align-items: center;
+      gap: .7rem;
+    }
+
+    .progress {
+      width: 170px;
+      height: 8px;
+      border-radius: 999px;
+      background: #e0d7c8;
+      overflow: hidden;
+    }
+
+    .progress span {
+      display: block;
+      height: 100%;
+      width: 0;
+      background: var(--green);
+    }
+
+    .nav {
+      position: fixed;
+      right: 1rem;
+      bottom: 1rem;
+      display: flex;
+      gap: .45rem;
+      z-index: 50;
+    }
+
+    .nav button {
+      width: 42px;
+      height: 42px;
+      padding: 0;
+      border-radius: 8px;
+      background: rgba(255, 253, 247, .92);
+      box-shadow: 0 8px 20px rgba(19, 32, 51, .12);
+    }
+
+    .muted { color: var(--muted); }
+    .accent-green { color: var(--green); }
+    .accent-blue { color: var(--blue); }
+    .accent-gold { color: var(--gold); }
+    .accent-red { color: var(--red); }
+
+    @media (max-width: 900px) {
+      body { overflow: auto; }
+      .deck, .slide { height: auto; min-height: 100vh; }
+      .slide { padding: 1.25rem; overflow: visible; }
+      header { flex-direction: column; }
+      .grid, .grid.two, .grid.four, .grid.wide-left, .hero, .route, .ladder {
+        grid-template-columns: 1fr;
+      }
+      .nav { display: none; }
+    }
+
+    @media print {
+      body { overflow: visible; background: #fff; }
+      .deck { height: auto; }
+      .slide {
+        display: grid !important;
+        width: 100%;
+        height: 100vh;
+        page-break-after: always;
+        background: var(--bg);
+      }
+      .nav, button { display: none; }
+    }
+  </style>
+</head>
+<body>
+  <main class="deck">
+    <section class="slide active">
+      <header>
+        <div>
+          <div class="eyebrow">Informática 5.0 | Aula 1</div>
+          <h1>O Mundo Digital e o Potencial da Informática 5.0</h1>
+          <p class="subtitle">Tecnologia como caminho para aprender melhor, trabalhar com mais autonomia e reconhecer oportunidades no mundo digital.</p>
+        </div>
+        <div class="badge">19h às 21h</div>
+      </header>
+      <div class="content hero">
+        <div class="path">
+          <div class="path-title">
+            <h3>Do uso comum à criação de valor</h3>
+            <span>jornada de aprendizagem</span>
+          </div>
+          <div class="ladder">
+            <div class="rung"><b>1</b><span>Navegar</span></div>
+            <div class="rung"><b>2</b><span>Comunicar</span></div>
+            <div class="rung"><b>3</b><span>Produzir</span></div>
+            <div class="rung"><b>4</b><span>Criar</span></div>
+            <div class="rung"><b>5</b><span>Analisar</span></div>
+            <div class="rung"><b>6</b><span>Empreender</span></div>
+          </div>
+        </div>
+        <div class="grid">
+          <div class="card green"><strong>Aprender</strong><p>Pesquisar, organizar, praticar e construir autonomia digital.</p></div>
+          <div class="card blue"><strong>Trabalhar</strong><p>Produzir documentos, comunicar melhor, analisar dados e resolver tarefas.</p></div>
+          <div class="card gold"><strong>Empreender</strong><p>Transformar habilidades digitais em serviços, produtos e soluções.</p></div>
+        </div>
+      </div>
+      <footer class="mini-footer"><span>Informática 5.0: aprender tecnologia para agir melhor no mundo digital</span><span></span></footer>
+    </section>
+
+    <section class="slide">
+      <header>
+        <div>
+          <div class="eyebrow">Tecnologia abre caminhos</div>
+          <h2>A mesma ferramenta pode servir para estudar, trabalhar ou criar renda</h2>
+          <p class="subtitle">O valor não está apenas no aplicativo. Está em saber usar a ferramenta para resolver uma necessidade real.</p>
+        </div>
+        <div class="badge">Contexto</div>
+      </header>
+      <div class="content grid">
+        <div class="card green"><strong>Estudo</strong><p>Um aluno usa Google, IA, nuvem e documentos para pesquisar, resumir, praticar e apresentar melhor.</p></div>
+        <div class="card blue"><strong>Trabalho</strong><p>Um profissional usa planilhas, e-mail, documentos e automações para organizar tarefas e entregar mais.</p></div>
+        <div class="card gold"><strong>Negócios</strong><p>Um empreendedor usa design, redes, atendimento digital e dados para vender, atender e melhorar decisões.</p></div>
+      </div>
+      <footer class="mini-footer"><span>Uma habilidade digital pode começar simples e se transformar em oportunidade</span><span></span></footer>
+    </section>
+
+    <section class="slide">
+      <header>
+        <div>
+          <div class="eyebrow">Oportunidades reais</div>
+          <h2>O curso conecta ferramentas a situações que existem fora da sala</h2>
+        </div>
+        <div class="badge">12 min</div>
+      </header>
+      <div class="content grid wide-left">
+        <div class="grid">
+          <div class="card green"><strong>Para estudar</strong><p>Organizar arquivos, criar resumos, montar apresentações, pesquisar fontes e aprender com apoio de IA.</p></div>
+          <div class="card blue"><strong>Para trabalhar</strong><p>Criar currículos, responder e-mails, montar relatórios, controlar dados e colaborar em projetos.</p></div>
+          <div class="card gold"><strong>Para empreender</strong><p>Criar artes, formulários, páginas, planilhas, atendimento digital e produtos simples de informação.</p></div>
+        </div>
+        <div class="card red">
+          <strong>Ideia importante</strong>
+          <p>Oportunidade não nasce só de uma ferramenta. Ela nasce quando uma habilidade encontra uma necessidade.</p>
+          <div class="button-row"><span class="timer" data-minutes="8">08:00</span><button class="primary-btn timer-btn">Iniciar</button></div>
+        </div>
+      </div>
+      <footer class="mini-footer"><span>Ferramenta + necessidade + prática = possibilidade de valor</span><span></span></footer>
+    </section>
+
+    <section class="slide">
+      <header>
+        <div>
+          <div class="eyebrow">Meu ponto de partida</div>
+          <h2>Antes de avançar, vale reconhecer o que você já sabe</h2>
+        </div>
+        <div class="badge">Autoavaliação</div>
+      </header>
+      <div class="content grid wide-left">
+        <div class="activity">
+          <code>Marque o que você já consegue fazer:
+
+1. Uso internet e WhatsApp com segurança.
+2. Já criei documento ou apresentação.
+3. Já usei planilhas.
+4. Já usei ChatGPT ou outra IA.
+5. Já pensei em usar tecnologia para ganhar renda ou melhorar um trabalho.</code>
+        </div>
+        <div class="card green">
+          <strong>Por que isso importa?</strong>
+          <p>Quando você reconhece seu ponto de partida, fica mais fácil perceber sua evolução.</p>
+          <p class="muted">O curso começa nos fundamentos e avança para aplicações reais.</p>
+        </div>
+      </div>
+      <footer class="mini-footer"><span>O ponto de partida mostra o caminho, não o limite</span><span></span></footer>
+    </section>
+
+    <section class="slide">
+      <header>
+        <div>
+          <div class="eyebrow">Informática 5.0</div>
+          <h2>Informática 5.0 une ferramentas, inteligência artificial e aplicação prática</h2>
+        </div>
+        <div class="badge">Pilares</div>
+      </header>
+      <div class="content grid">
+        <div class="card green">
+          <strong>1. Tecnologia</strong>
+          <p>Aprender a usar internet, Google Workspace, documentos, planilhas, nuvem, segurança, design, dados, sites e automações.</p>
+        </div>
+        <div class="card blue">
+          <strong>2. Inteligência Artificial</strong>
+          <p>Usar IA para pesquisar, escrever, planejar, criar, revisar, organizar ideias e aprender com mais direção.</p>
+        </div>
+        <div class="card gold">
+          <strong>3. Empreendedorismo</strong>
+          <p>Aplicar habilidades digitais para melhorar trabalhos, vender serviços, criar produtos e gerar oportunidades.</p>
+        </div>
+      </div>
+      <footer class="mini-footer"><span>Não é decorar ferramenta. É aprender a aplicar em situações reais.</span><span></span></footer>
+    </section>
+
+    <section class="slide">
+      <header>
+        <div>
+          <div class="eyebrow">Da informação à oportunidade</div>
+          <h2>Informação bem pesquisada pode virar direção</h2>
+        </div>
+        <div class="badge">Caminho</div>
+      </header>
+      <div class="content route">
+        <div class="card"><div class="number">1</div><strong>Pergunta</strong><p>O que quero aprender, resolver ou entender?</p></div>
+        <div class="card"><div class="number">2</div><strong>Pesquisa</strong><p>Quais fontes, exemplos e dados encontro?</p></div>
+        <div class="card"><div class="number">3</div><strong>Filtro</strong><p>O que é confiável, útil e adequado ao meu nível?</p></div>
+        <div class="card"><div class="number">4</div><strong>Organização</strong><p>Como posso resumir, comparar e transformar em plano?</p></div>
+        <div class="card"><div class="number">5</div><strong>Aplicação</strong><p>Isso vira estudo, melhoria no trabalho ou ideia de negócio?</p></div>
+        <div class="card"><div class="number">6</div><strong>Teste</strong><p>Qual primeiro passo pequeno posso executar?</p></div>
+      </div>
+      <footer class="mini-footer"><span>Pesquisar bem é transformar curiosidade em caminho de ação</span><span></span></footer>
+    </section>
+
+    <section class="slide">
+      <header>
+        <div>
+          <div class="eyebrow">Mapa da jornada</div>
+          <h2>A jornada do curso aumenta sua autonomia digital</h2>
+        </div>
+        <div class="badge">Volumes 01 e 02</div>
+      </header>
+      <div class="content route">
+        <div class="card"><div class="number">1</div><strong>Navegar e comunicar</strong><p>Internet, Gmail, Docs, Meet, Forms e apresentações.</p></div>
+        <div class="card"><div class="number">2</div><strong>Organizar e proteger</strong><p>Drive, nuvem, arquivos, segurança, contas e sistema.</p></div>
+        <div class="card"><div class="number">3</div><strong>Produzir e criar</strong><p>Canva, design, imagem, vídeo e presença digital.</p></div>
+        <div class="card"><div class="number">4</div><strong>Analisar dados</strong><p>Sheets, fórmulas, dashboards, gráficos, Power BI.</p></div>
+        <div class="card"><div class="number">5</div><strong>Gerir e vender</strong><p>Agilidade, produtividade, e-commerce, vendas online.</p></div>
+        <div class="card"><div class="number">6</div><strong>Automatizar e empreender</strong><p>Chatbots, low-code, no-code, sites e soluções digitais.</p></div>
+      </div>
+      <footer class="mini-footer"><span>Cada etapa amplia o que você consegue fazer com tecnologia</span><span></span></footer>
+    </section>
+
+    <section class="slide">
+      <header>
+        <div>
+          <div class="eyebrow">Pesquisar no Google</div>
+          <h2>Pesquisar não é só digitar: é investigar com intenção</h2>
+        </div>
+        <div class="badge">Método</div>
+      </header>
+      <div class="content grid">
+        <div class="card green"><strong>1. Defina a pergunta</strong><p>O que exatamente você quer descobrir? Quanto mais clara a pergunta, melhor a busca.</p></div>
+        <div class="card blue"><strong>2. Escolha palavras-chave</strong><p>Use termos importantes: ferramenta, público, problema, nível e objetivo.</p></div>
+        <div class="card gold"><strong>3. Compare resultados</strong><p>Observe fonte, data, profundidade e se o conteúdo serve para o seu momento.</p></div>
+      </div>
+      <footer class="mini-footer"><span>Uma boa pesquisa começa antes de apertar Enter</span><span></span></footer>
+    </section>
+
+    <section class="slide">
+      <header>
+        <div>
+          <div class="eyebrow">Google na prática</div>
+          <h2>Comandos simples ajudam a encontrar respostas melhores</h2>
+        </div>
+        <div class="badge">Google</div>
+      </header>
+      <div class="content grid four">
+        <div class="card"><strong>Aspas</strong><p><span class="query">"google sheets básico"</span></p><p>Encontra a frase exata.</p></div>
+        <div class="card"><strong>Menos</strong><p><span class="query">design canva -avançado</span></p><p>Remove resultados fora do foco.</p></div>
+        <div class="card"><strong>Filetype</strong><p><span class="query">planilhas filetype:pdf</span></p><p>Busca materiais em formato específico.</p></div>
+        <div class="card"><strong>Site</strong><p><span class="query">empreendedorismo site:gov.br</span></p><p>Pesquisa dentro de um domínio.</p></div>
+      </div>
+      <footer class="mini-footer"><span>Comece com aspas e filetype. Depois experimente combinar comandos.</span><span></span></footer>
+    </section>
+
+    <section class="slide">
+      <header>
+        <div>
+          <div class="eyebrow">Prática 1</div>
+          <h2>Pesquise um tema e procure uma oportunidade escondida nele</h2>
+        </div>
+        <div class="badge">15 min</div>
+      </header>
+      <div class="content grid wide-left">
+        <div class="activity">
+          <code>Escolha um tema do curso:
+planilhas, design, IA, segurança, vendas online, currículo, apresentações, sites ou atendimento digital.
+
+Faça três buscas:
+1. Como aprender esse tema.
+2. Onde esse tema aparece no trabalho.
+3. Que serviço ou produto pode nascer desse tema.
+
+Anote:
+O que encontrei para estudar?
+Que problema real apareceu?
+Que oportunidade esse tema pode abrir?</code>
+        </div>
+        <div class="card blue">
+          <strong>Exemplos de busca</strong>
+          <p><span class="query">"google sheets básico" filetype:pdf</span></p>
+          <p><span class="query">serviços com google sheets pequenos negócios</span></p>
+          <p><span class="query">como vender templates no canva</span></p>
+          <div class="button-row"><span class="timer" data-minutes="10">10:00</span><button class="primary-btn timer-btn">Iniciar</button></div>
+        </div>
+      </div>
+      <footer class="mini-footer"><span>A mesma pesquisa pode revelar estudo, trabalho e oportunidade</span><span></span></footer>
+    </section>
+
+    <section class="slide">
+      <header>
+        <div>
+          <div class="eyebrow">Leitura crítica</div>
+          <h2>A informação só ajuda quando você sabe avaliar</h2>
+        </div>
+        <div class="badge">Critérios</div>
+      </header>
+      <div class="content grid">
+        <div class="card green"><strong>Serve para meu nível?</strong><p>O conteúdo é básico, intermediário ou avançado demais?</p></div>
+        <div class="card blue"><strong>Parece confiável?</strong><p>Tem fonte, autor, instituição, data ou organização clara?</p></div>
+        <div class="card gold"><strong>Mostra aplicação?</strong><p>Ajuda a entender como esse conhecimento aparece no estudo, no trabalho ou no mercado?</p></div>
+      </div>
+      <footer class="mini-footer"><span>Pesquisar é comparar, selecionar e transformar informação em entendimento</span><span></span></footer>
+    </section>
+
+    <section class="slide">
+      <header>
+        <div>
+          <div class="eyebrow">Google + inteligência artificial</div>
+          <h2>Google encontra sinais. IA ajuda a organizar possibilidades.</h2>
+        </div>
+        <div class="badge">Primeiro uso</div>
+      </header>
+      <div class="content grid two">
+        <div class="card blue">
+          <strong>Google ajuda a encontrar</strong>
+          <ul>
+            <li>fontes, exemplos e materiais;</li>
+            <li>tendências e dúvidas comuns;</li>
+            <li>problemas reais de pessoas e negócios.</li>
+          </ul>
+        </div>
+        <div class="card green">
+          <strong>IA ajuda a organizar</strong>
+          <ul>
+            <li>explicações em linguagem simples;</li>
+            <li>listas de ideias e caminhos;</li>
+            <li>planos de estudo, comparação e próximos passos.</li>
+          </ul>
+        </div>
+      </div>
+      <footer class="mini-footer"><span>As duas ferramentas ficam melhores quando você sabe o que procura</span><span></span></footer>
+    </section>
+
+    <section class="slide">
+      <header>
+        <div>
+          <div class="eyebrow">Prompt com direção</div>
+          <h2>Uma boa pergunta para IA transforma pesquisa em plano</h2>
+        </div>
+        <div class="badge">15 min</div>
+      </header>
+      <div class="content grid wide-left">
+        <div class="activity">
+          <code>Modelo de pergunta:
+
+Sou aluno [iniciante/intermediário] do curso Informática 5.0.
+Pesquisei sobre [tema] e encontrei [informação ou problema].
+Quero entender como esse tema pode gerar oportunidade de estudo, trabalho ou negócio.
+Responda em tabela com:
+1. habilidade necessária;
+2. problema que resolve;
+3. ideia de serviço ou produto;
+4. primeiro passo para aprender.</code>
+        </div>
+        <div class="card gold">
+          <strong>Exemplo de tema</strong>
+          <p>Planilhas podem virar controle financeiro, dashboard simples, organização de estoque, template digital ou serviço para pequenos negócios.</p>
+          <div class="button-row"><span class="timer" data-minutes="10">10:00</span><button class="primary-btn timer-btn">Iniciar</button></div>
+        </div>
+      </div>
+      <footer class="mini-footer"><span>Contexto transforma IA em apoio de estudo e criação</span><span></span></footer>
+    </section>
+
+    <section class="slide">
+      <header>
+        <div>
+          <div class="eyebrow">Informação vira oportunidade</div>
+          <h2>Uma ideia digital pode nascer de uma pesquisa bem feita</h2>
+        </div>
+        <div class="badge">10 min</div>
+      </header>
+      <div class="content grid wide-left">
+        <div class="activity">
+          <code>Complete seu mapa:
+
+Quero aprender mais sobre...
+Essa habilidade pode ajudar pessoas ou negócios a...
+Uma ideia de serviço ou produto digital seria...
+Meu primeiro passo de estudo será...</code>
+        </div>
+        <div class="card green">
+          <strong>Três caminhos possíveis</strong>
+          <ul>
+            <li>usar a habilidade para estudar melhor;</li>
+            <li>usar no trabalho para resolver tarefas;</li>
+            <li>transformar em serviço, template, conteúdo ou solução digital.</li>
+          </ul>
+        </div>
+      </div>
+      <footer class="mini-footer"><span>O primeiro passo não precisa ser grande. Precisa ser claro.</span><span></span></footer>
+    </section>
+
+    <section class="slide">
+      <header>
+        <div>
+          <div class="eyebrow">Gancho da próxima aula</div>
+          <h2>Da visão geral para a produção digital</h2>
+          <p class="subtitle">Depois de entender o percurso, a próxima etapa é usar ferramentas digitais para comunicar, organizar e produzir melhor.</p>
+        </div>
+        <div class="badge">21h00</div>
+      </header>
+      <div class="content grid two">
+        <div class="card green"><strong>Começamos por</strong><p>Compreender o mundo digital, pesquisar com intenção e usar IA como apoio de estudo.</p></div>
+        <div class="card blue"><strong>Vamos avançar para</strong><p>Google Workspace, documentos, comunicação profissional, organização e colaboração.</p></div>
+      </div>
+      <footer class="mini-footer"><span>Informática 5.0: tecnologia para estudar, trabalhar, criar e empreender</span><span></span></footer>
+    </section>
+  </main>
+
+  <div class="nav">
+    <button id="prev" aria-label="Slide anterior">‹</button>
+    <button id="next" aria-label="Próximo slide">›</button>
+  </div>
+
+  <script>
+    const slides = Array.from(document.querySelectorAll('.slide'));
+    let current = 0;
+    let timerId = null;
+
+    function updateProgress() {
+      slides.forEach((slide, index) => {
+        const footer = slide.querySelector('.mini-footer');
+        if (!footer) return;
+        const existing = footer.querySelector('.progress-wrap');
+        if (existing) existing.remove();
+        const wrap = document.createElement('span');
+        wrap.className = 'progress-wrap';
+        const label = document.createElement('span');
+        label.textContent = `${index + 1}/${slides.length}`;
+        const bar = document.createElement('span');
+        bar.className = 'progress';
+        const fill = document.createElement('span');
+        fill.style.width = `${((index + 1) / slides.length) * 100}%`;
+        bar.appendChild(fill);
+        wrap.appendChild(label);
+        wrap.appendChild(bar);
+        footer.appendChild(wrap);
+      });
+    }
+
+    function showSlide(index) {
+      current = Math.max(0, Math.min(index, slides.length - 1));
+      slides.forEach((slide, i) => slide.classList.toggle('active', i === current));
+      window.location.hash = `slide-${current + 1}`;
+    }
+
+    function nextSlide() { showSlide(current + 1); }
+    function prevSlide() { showSlide(current - 1); }
+
+    document.getElementById('next').addEventListener('click', nextSlide);
+    document.getElementById('prev').addEventListener('click', prevSlide);
+
+    document.addEventListener('keydown', (event) => {
+      if (event.key === 'ArrowRight' || event.key === 'PageDown') nextSlide();
+      if (event.key === 'ArrowLeft' || event.key === 'PageUp') prevSlide();
+      if (event.key.toLowerCase() === 'p') window.print();
+      if (event.key.toLowerCase() === 'f') {
+        if (!document.fullscreenElement) document.documentElement.requestFullscreen();
+        else document.exitFullscreen();
+      }
+    });
+
+    function formatTime(totalSeconds) {
+      const minutes = String(Math.floor(totalSeconds / 60)).padStart(2, '0');
+      const seconds = String(totalSeconds % 60).padStart(2, '0');
+      return `${minutes}:${seconds}`;
+    }
+
+    document.querySelectorAll('.timer-btn').forEach((button) => {
+      button.addEventListener('click', () => {
+        if (timerId) {
+          clearInterval(timerId);
+          timerId = null;
+        }
+        const timer = button.parentElement.querySelector('.timer');
+        const minutes = Number(timer.dataset.minutes || 1);
+        let remaining = minutes * 60;
+        timer.textContent = formatTime(remaining);
+        timerId = setInterval(() => {
+          remaining -= 1;
+          timer.textContent = formatTime(Math.max(remaining, 0));
+          if (remaining <= 0) {
+            clearInterval(timerId);
+            timerId = null;
+          }
+        }, 1000);
+      });
+    });
+
+    updateProgress();
+    const hashMatch = window.location.hash.match(/slide-(\d+)/);
+    if (hashMatch) showSlide(Number(hashMatch[1]) - 1);
+  </script>
+</body>
+</html>
